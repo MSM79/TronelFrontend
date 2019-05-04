@@ -1,0 +1,24 @@
+@import 'fonts';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: GoogleSans;
+  background-color: #f8f9fa;
+}
+
+button, input, textarea {
+  font-family: GoogleSans;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
