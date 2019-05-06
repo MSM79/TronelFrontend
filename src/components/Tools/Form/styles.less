@@ -1,0 +1,72 @@
+@import "~Root/styles/colors.less";
+
+:local(.form) {
+  display: flex;
+  flex-direction: column;
+  width: 452px;
+  height: 586px;
+  border-radius: 5px;
+  background: @charocal-gray;
+  padding: 0px 15px;
+
+  li {
+    border-bottom: 1px solid #46444d;
+    height: 67px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+:local(.rows) {
+  display: flex;
+  justify-content: space-between;
+}
+
+:local(.title) {
+  color: @gray-1;
+
+  li {
+    width: 170px;
+  }
+}
+
+:local(.info) {
+  color: #fff;
+  text-align: right;
+
+  li {
+    justify-content: flex-end;
+  }
+}
+
+:local(.desceription) {
+  width: 420px;
+  height: 98px;
+  border-radius: 4px;
+  background: #343844;
+  font-size: 14px;
+  color: @gray-1;
+  padding: 12px 9px;
+}
+
+:local(.acceptButton) {
+  width: 106px;
+  height: 32px;
+  border-radius: 4px;
+  background: @purple;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 22px;
+
+  &:hover {
+    background: darken(@purple, 5%);
+  }
+
+  img {
+    margin-right: 5.5px;
+  }
+}

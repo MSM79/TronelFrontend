@@ -7,12 +7,18 @@
 }
 
 body {
-  font-family: GoogleSans;
-  background-color: #f8f9fa;
+  font-family: Roboto;
+  background-color: #16161a;
 }
 
 button, input, textarea {
-  font-family: GoogleSans;
+  font-family: Roboto;
+  border: none;
+}
+
+button, input[type="submit"] {
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 a {
