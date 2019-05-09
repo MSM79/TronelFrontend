@@ -25,6 +25,7 @@ function Explorer() {
     <div>
       <Header />
       <div className={styles.container}>
+        <h1 className={styles.h1Title}>Explorer</h1>
         <section>
           <div className={styles.row1}>
             <article className={styles.currency}>
@@ -49,6 +50,7 @@ function Explorer() {
               predictedprice="Greater than or equal $30"
               amountofbet="500 TRX"
               specifieddate="2019/05/12     12:00 UTC"
+              value="Accept"
             />
             <Form
               formnumber="276736719919836672"
@@ -56,6 +58,7 @@ function Explorer() {
               predictedprice="Greater than or equal $30"
               amountofbet="500 TRX"
               specifieddate="2019/05/12  |  12:00 UTC"
+              value="Accept"
             />
           </div>
         </section>
