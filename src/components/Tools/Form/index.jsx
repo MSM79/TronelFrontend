@@ -13,6 +13,7 @@ function Form(props) {
     predictedprice,
     amountofbet,
     specifieddate,
+    value,
   } = props;
   return (
     <div className={styles.form}>
@@ -37,9 +38,9 @@ function Form(props) {
       <div className={styles.desceription}>
         <p>At the 2019/05/12|12:00 UTC  if the  BNB price is greater than or equal 30$, the requester user is the winner and gets 500 TRX, otherwise the acceptor user in the bet gets 500 TRX and  is the winner.</p>
       </div>
-      <button type="button" className={styles.acceptButton}>
+      <button className={styles.acceptButton} type="button">
         <img src={acceptIcon} alt="acceptIcon" />
-      Accept
+        {value}
       </button>
     </div>
   );

@@ -68,5 +68,33 @@
 
   img {
     margin-right: 5.5px;
+    vertical-align: middle;
+  }
+}
+
+@media (min-width: 120px) and (max-width: 580px) {
+:local(.form) {
+  width: 340px;
+  margin-bottom: 10px;
+  }
+
+  :local(.title) {
+    li {
+      width: 120px;
+      font-size: 14px;
+    }
+  }
+
+  :local(.info) {
+    color: #fff;
+    text-align: right;
+
+    li {
+      font-size: 12px;
+    }
+}
+:local(.desceription) {
+  width: 100%;
+  font-size: 13px;
   }
 }
