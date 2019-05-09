@@ -1,0 +1,74 @@
+@import "~Root/styles/colors.less";
+
+:local(.container) {
+  padding: 30px 41px;
+
+  article {
+    display: flex;
+    align-items: center;
+
+    section {
+      width: 34px;
+      height: 34px;
+      border-radius: 100%;
+      background: #c94850;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  b {
+    color: @gray-1;
+    font-size: 18px;
+
+  }
+
+  p {
+    color: @brownish-grey;
+    font-size: 16px;
+    margin-top: 16px;
+    padding-left: 45px;
+  }
+}
+
+:local(.bottom) {
+  background: @charocal-gray-1;
+  height: 62px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 30px;
+}
+
+:local(.buttonDel) {
+  width: 92px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #c94850;
+  color: #fff;
+
+  &:hover {
+    background: darken(#c94850, 5%);
+  }
+}
+
+:local(.cancelButton) {
+  width: 92px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  background: transparent;
+  color: @gray-1;
+  margin-right: 15px;
+
+  &:hover {
+    color: #fff;
+  }
+}
