@@ -13,20 +13,24 @@ function Header() {
         <img src={assetIcon} alt="asset" className={styles.logo} />
       </div>
       <div className={styles.first}>
-        <a href="#">Explorer</a>
+        <a href="/">Explorer</a>
         <a href="#">My Bets</a>
-        <a href="#">My Requests</a>
+        <a href="/myrequests">My Requests</a>
       </div>
       <div>
-        <button type="button" className={styles.headerButton}>
-          <img src={iconsplus} alt="iconsplus" />
-          Create request
-        </button>
+        <a href="/createrequest">
+          <button type="button" className={styles.headerButton}>
+            <img src={iconsplus} alt="iconsplus" />
+            Create request
+          </button>
+        </a>
       </div>
       <div className={styles.address}>
         <p>Address:</p>
         <span>TJWzn8rjLYbfS3hcAVVscLeERUs6rfMoA5</span>
-        <img src={iconcopy} alt="iconcopy" />
+        <a href="#">
+          <img src={iconcopy} alt="iconcopy" />
+        </a>
       </div>
       <div className={styles.trx}>
         <p>100 TRX</p>

@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 65px;
+  margin-bottom: 40px;
 }
 
 :local(.first) {
@@ -21,9 +22,20 @@
   a {
     color: @gray-1;
     width: 73px;
+    text-align: center;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
 
     &:last-child {
       width: 100px;
+    }
+
+    &:hover {
+      color: @purple;
+      border-bottom: 1px solid @purple;
     }
   }
 }
@@ -41,6 +53,12 @@
 
   img {
     margin-right: 8px;
+  }
+
+  &:hover {
+    background: #333;
+    border: solid 2px @purple;
+    box-shadow: @purple 0 1px 10px;
   }
 }
 
