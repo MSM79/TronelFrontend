@@ -14,7 +14,7 @@ function Header() {
       </div>
       <div className={styles.first}>
         <a href="/">Explorer</a>
-        <a href="#">My Bets</a>
+        <a href="/mybets">My Bets</a>
         <a href="/myrequests">My Requests</a>
       </div>
       <div>

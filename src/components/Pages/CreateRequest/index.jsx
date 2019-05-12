@@ -44,11 +44,14 @@ function CreateRequest() {
         </div>
         <ul className={styles.rows}>
           <p>Expiration date:</p>
-          <li>15 Min</li>
+          <li>
+            15 Min
+          </li>
           <li>1 Hour</li>
           <li>12 Hour</li>
           <li>2 Month</li>
         </ul>
+
         <div className={styles.rows}>
           <p>Amount bet</p>
           <input type="text" placeholder="Place holder" />
