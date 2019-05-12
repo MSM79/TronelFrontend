@@ -5,6 +5,10 @@ import Header from 'Root/components/Tools/Header';
 import Form from 'Root/components/Tools/Form';
 import Dropdown from 'Root/components/Tools/Dropdown';
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
+import ReactDOM from 'react-dom';
+import Slider, { Range } from 'rc-slider';
+
+import 'rc-slider/assets/index.css';
 import styles from './styles.less';
 
 function onSelect({ key }) {
@@ -20,6 +24,10 @@ const menu = (
   </Menu>
 );
 
+function range(e) {
+  console.log(e);
+}
+
 function Explorer() {
   return (
     <div>
@@ -34,6 +42,10 @@ function Explorer() {
             </article>
             <article className={styles.amount}>
               <p>Amount of bet</p>
+                <Range onChange={range}
+                defaultValue={[20,50]}
+                railStyle={{ background:'#b2b4b7'}}
+                className={styles.range}/>
             </article>
             <article className={styles.form}>
               <p>Form number</p>
