@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 import assetIcon from 'Root/images/asset.png';
 import iconsplus from 'Root/images/icons-8-plus.png';
 import iconcopy from 'Root/images/icons-8-copy.png';
@@ -13,17 +15,17 @@ function Header() {
         <img src={assetIcon} alt="asset" className={styles.logo} />
       </div>
       <div className={styles.first}>
-        <a href="/">Explorer</a>
-        <a href="/mybets">My Bets</a>
-        <a href="/myrequests">My Requests</a>
+        <NavLink to="/" activeClassName={styles.activeLink}>Explorer</NavLink>
+        <NavLink to="/mybets" activeClassName={styles.activeLink}>My Bets</NavLink>
+        <NavLink to="/myrequests" activeClassName={styles.activeLink}>My Requests</NavLink>
       </div>
       <div>
-        <a href="/createrequest">
+        <NavLink to="/createrequest">
           <button type="button" className={styles.headerButton}>
             <img src={iconsplus} alt="iconsplus" />
             Create request
           </button>
-        </a>
+        </NavLink>
       </div>
       <div className={styles.address}>
         <p>Address:</p>
