@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 
 import Header from 'Root/components/Tools/Header';
 
-import Form from 'Root/components/Tools/FormDelete';
+import FormDelete from 'Root/components/Tools/FormDelete';
 
 import Modals from 'Root/components/Pages/Modal';
 
 import Modal from 'Root/components/Tools/Modal';
+import Menu from 'Root/components/Tools/HamburgerMenu';
+
 
 import styles from './styles.less';
 
@@ -18,6 +20,12 @@ class MyRequsets extends Component {
   show = () => {
     this.setState({
       visible: true,
+    });
+  }
+
+  hide = () => {
+    this.setState({
+      visible: false,
     });
   }
 
@@ -40,7 +48,9 @@ class MyRequsets extends Component {
               </article>
             </div>
             <div className={styles.row2}>
-              <Form
+              <FormDelete
+                handleDelete={this.show}
+                handleClose={this.hide}
                 formnumber="276736719919836672"
                 requseter="WTEA674fdDe714fd979de3EdF6A…"
                 predictedprice="Greater than or equal $30"
@@ -48,7 +58,8 @@ class MyRequsets extends Component {
                 specifieddate="2019/05/12  |  12:00 UTC"
                 value="Delete"
               />
-              <Form
+              <FormDelete
+              handleDelete={this.show}
                 formnumber="276736719919836672"
                 requseter="WTEA674fdDe714fd979de3EdF6A…"
                 predictedprice="Greater than or equal $30"
@@ -59,10 +70,10 @@ class MyRequsets extends Component {
             </div>
           </section>
         </div>
-        <button type="button" onClick={this.show}>asdsdfasdf</button>
-        <Modal width={479} height={225} visible={visible}>
-          <Modals />
+        <Modal width={479} height={225} visible={visible} onClose={this.hide}>
+          <Modals handleClose={this.hide} />
         </Modal>
+        <Menu />
       </div>
     );
   }
