@@ -22,6 +22,7 @@ class App extends Component {
       height,
       visible,
       children,
+      onClose,
     } = this.props;
 
     return (
@@ -31,7 +32,7 @@ class App extends Component {
           width={width}
           height={height}
           visible={visible || visibleState}
-          onClose={this.hide}
+          onClose={this.props.onClose}
           animation="slideDown"
         >
           {children}

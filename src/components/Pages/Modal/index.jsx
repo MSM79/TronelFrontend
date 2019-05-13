@@ -14,7 +14,7 @@ class Modals extends Component {
         </article>
         <p>Are you sure you want to delete this request?</p>
         <div className={styles.bottom}>
-          <button type="button" className={styles.cancelButton}>Cancel</button>
+          <button type="button" className={styles.cancelButton} onClick={this.props.handleClose}>Cancel</button>
           <button type="button" className={styles.buttonDel}>Delete</button>
         </div>
       </div>
