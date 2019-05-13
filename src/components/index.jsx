@@ -11,6 +11,8 @@ import Explorer from './Pages/Explorer';
 import MyRequests from './Pages/MyRequests';
 import CreateRequest from './Pages/CreateRequest';
 import MyBets from './Pages/MyBets';
+import PrivateKey from './Pages/PrivateKey';
+import ShowingPrivateKey from './Pages/ShowingPrivateKey';
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route exact path="/myrequests" component={MyRequests} />
           <Route exact path="/createrequest" component={CreateRequest} />
           <Route exact path="/mybets" component={MyBets} />
+          <Route exact path="/privatekey" component={PrivateKey} />
+          <Route exact path="/Showingprivatekey" component={ShowingPrivateKey} />
         </Switch>
       </Router>
     </BrowserRouter>
