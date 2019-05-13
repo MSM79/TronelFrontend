@@ -6,7 +6,7 @@ import coinIcon from 'Root/images/binance-coin-logo-png-transparent-copy.png';
 import styles from './styles.less';
 
 
-function Form(props) {
+function FormDelete(props) {
   const {
     formnumber,
     requseter,
@@ -38,7 +38,7 @@ function Form(props) {
       <div className={styles.desceription}>
         <p>At the 2019/05/12|12:00 UTC  if the  BNB price is greater than or equal 30$, the requester user is the winner and gets 500 TRX, otherwise the acceptor user in the bet gets 500 TRX and  is the winner.</p>
       </div>
-      <button className={styles.deleteButton} type="button">
+      <button className={styles.deleteButton} type="button" onClick={props.handleDelete}>
         <img src={deleteIcon} alt="delteIcon" />
         {value}
       </button>
@@ -46,4 +46,4 @@ function Form(props) {
   );
 }
 
-export default Form;
+export default FormDelete;

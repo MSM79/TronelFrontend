@@ -74,7 +74,7 @@
 
 @media (min-width: 120px) and (max-width: 580px) {
 :local(.form) {
-  width: 340px;
+  width: 100%;
   margin-bottom: 10px;
   }
 
@@ -87,12 +87,14 @@
 
   :local(.info) {
     color: #fff;
-    text-align: right;
+    width: 150px;
 
     li {
       font-size: 12px;
+      justify-content: flex-start;
     }
-}
+  }
+
 :local(.desceription) {
   width: 100%;
   font-size: 13px;
