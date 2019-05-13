@@ -29,7 +29,7 @@ function MyBets() {
                 predictedprice="Greater than or equal $30"
                 amountofbet="500 TRX"
                 specifieddate="2019/05/12  |  12:00 UTC"
-                value="You Lose"
+                win
               />
               <FormBets
                 formnumber="276736719919836672"
@@ -37,7 +37,7 @@ function MyBets() {
                 predictedprice="Greater than or equal $30"
                 amountofbet="500 TRX"
                 specifieddate="2019/05/12  |  12:00 UTC"
-                value="You Win"
+                lose
               />
             </div>
           </section>
