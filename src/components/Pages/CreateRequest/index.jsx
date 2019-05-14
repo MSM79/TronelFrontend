@@ -3,6 +3,8 @@ import React from 'react';
 import Header from 'Root/components/Tools/Header';
 
 import Dropdown from 'Root/components/Tools/Dropdown';
+import RadioButton from 'Root/components/Tools/RadioButton';
+
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
 import styles from './styles.less';
 
@@ -11,10 +13,10 @@ function onSelect({ key }) {
 }
 
 const menu = (
-  <Menu onSelect={onSelect}>
-    <MenuItem key="1">one</MenuItem>
+  <Menu onSelect={onSelect} className={styles.menu}>
+    <MenuItem key="1" className={styles.menuItem}>one</MenuItem>
     <Divider />
-    <MenuItem key="2">two</MenuItem>
+    <MenuItem key="2" className={styles.menuItem}>two</MenuItem>
   </Menu>
 );
 
@@ -44,12 +46,10 @@ function CreateRequest() {
         </div>
         <ul className={styles.rows}>
           <p>Expiration date:</p>
-          <li>
-            15 Min
-          </li>
-          <li>1 Hour</li>
-          <li>12 Hour</li>
-          <li>2 Month</li>
+          <li><RadioButton /> <p>15 Min</p> </li>
+          <li><RadioButton /> <p>1 Hour</p> </li>
+          <li><RadioButton /> <p>12 Hour</p> </li>
+          <li><RadioButton /> <p>2 Month</p> </li>
         </ul>
 
         <div className={styles.rows}>

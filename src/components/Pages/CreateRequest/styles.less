@@ -2,7 +2,7 @@
 
 :local(.container) {
   width: 985px;
-  height: 873px;
+  height: auto;
   border-radius: 4px;
   background: @charocal-gray;
   margin: auto auto;
@@ -80,6 +80,11 @@
     color: @gray-1;
     font-size: 14px;
     margin-top: 34px;
+
+    p {
+      margin-left: 35px;
+      padding-top: 4px;
+    }
   }
 }
 
@@ -91,6 +96,16 @@
   width: 73%;
   margin: auto;
   margin-bottom: 30px;
+}
+
+:local(.menuItem) {
+  background: @charocal-gray-1;
+  color: @gray-1;
+  cursor: pointer;
+
+  &:hover {
+    color:#fff;
+  }
 }
 
 @media (min-width: 120px) and (max-width: 580px) {
@@ -114,5 +129,11 @@
     p {
       font-size: 12px;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  :local(.container) {
+    width: 80%;
   }
 }

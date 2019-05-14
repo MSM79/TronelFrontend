@@ -1,0 +1,70 @@
+@import "~Root/styles/colors.less";
+
+:local(.container) {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: 0.3s;
+
+  input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:checked ~ :local(.checkmark) {
+    border: 2px solid #453cff;
+    }
+
+    &:checked ~ :local(.checkmark) {
+      &::after {
+        transition: 0.3s;
+        display: block;
+      }
+    }
+  }
+
+  :local(.checkmark){
+    &::after {
+    	width: 17px;
+    	height: 17px;
+    	border-radius: 50%;
+    	background: @purple;
+      transition: 0.3s;
+    }
+  }
+}
+
+:local(.checkmark) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  transition: 0.3s;
+  border: 2px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+   content: "";
+   position: absolute;
+   display: none;
+  }
+
+  &:hover {
+    input ~ :local(.checkmark) {
+      transition: 0.3s;
+      border: 2px solid #453cff;
+    }
+  }
+}
