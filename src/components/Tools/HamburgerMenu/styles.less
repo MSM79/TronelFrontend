@@ -1,20 +1,122 @@
 @import '~Root/styles/colors.less';
 
 :local(.myMenuContent) {
+  position: relative;
+  height: 100vh;
+  padding-top: 50px;
+  overflow: hidden;
 
-  a {
+   a {
     color: @gray-1;
-    height: 60px;
-    border-bottom: 1px solid #46444d;
     display: flex;
-    justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s;
+    font-size: 1.15em;
+    padding: 0.8em;
+    margin-left: 30px;
+    font-weight: bold;
 
     &:hover {
-      background: #16161a;
       color: @purple !important;
+      border-left: 1px solid @purple;
+      transform: scale(1.09);
     }
+  }
+
+  li {
+    :local(.addressBar) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      width: 100%;
+      background: #1d1d1d;
+      font-size: 14px;
+      padding: 10px;
+      height: 80px;
+      margin-top: 20px;
+
+      b {
+        color: @gray-1;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 10px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+:local(.trx) {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 104px;
+  border-left: solid 1px #3c3c3c;
+  background: @purple !important;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  p {
+    font-size: 25px;
+  }
+
+  small {
+    color:#b2b4b7;
+    font-size: 14px;
+  }
+}
+
+:local(.space) {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+}
+
+:local(.exit) {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  img {
+    width: 20px;
+    cursor: pointer;
+  }
+}
+:local(.hamburger) {
+   display: none;
+}
+
+@media (min-width: 120px) and (max-width: 580px) {
+  :local(.hamburger) {
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     padding: 10px;
+     display: flex;
+     align-items: center;
+
+     img {
+       width: 30px;
+       margin-left: 10px;
+     }
   }
 }
