@@ -6,7 +6,24 @@
       background: @charocal-gray;
       padding: 0;
       border-radius: 4px;
+    }
+  }
+}
+
+:local(.red) {
+
+  div {
+    &:nth-child(2) {
       border-top: solid 4px #c94850;
     }
   }
+}
+
+:local(.blue) {
+  div {
+    &:nth-child(2) {
+      border-top: solid 4px @purple;
+    }
+  }
+
 }

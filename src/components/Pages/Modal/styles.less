@@ -8,14 +8,7 @@
     align-items: center;
 
     section {
-      width: 34px;
-      height: 34px;
-      border-radius: 100%;
-      background: #c94850;
       margin-right: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
   }
 
@@ -46,7 +39,20 @@
   padding: 15px 30px;
 }
 
-:local(.buttonDel) {
+:local(.acceptButton) {
+  width: 92px;
+  height: 32px;
+  border-radius: 4px;
+  font-size: 14px;
+  background: @purple;
+  color: #fff;
+
+  &:hover {
+    background: darken(@purple, 5%);
+  }
+}
+
+:local(.deleteButton) {
   width: 92px;
   height: 32px;
   border-radius: 4px;

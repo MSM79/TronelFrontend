@@ -1,5 +1,6 @@
 import Rodal from 'rodal';
 import React, { Component } from 'react';
+import classnames from 'classnames';
 
 import 'rodal/lib/rodal.css';
 import styles from './styles.less';
@@ -23,12 +24,13 @@ class App extends Component {
       visible,
       children,
       onClose,
+      theme,
     } = this.props;
 
     return (
       <div>
         <Rodal
-          className={styles.rodal}
+          className={classnames(styles.rodal, styles[theme])}
           width={width}
           height={height}
           visible={visible || visibleState}
