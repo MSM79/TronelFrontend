@@ -112,6 +112,37 @@ section {
   justify-content: space-between;
 }
 
+:local(.menuItem) {
+  background: @charocal-gray-1;
+  color: @gray-1;
+  cursor: pointer;
+  font-family: Roboto;
+  display: flex !important;
+  align-items: center !important;
+
+  &:hover {
+    color: #fff !important;
+    background: darken(@charocal-gray-1, 2%) !important;
+  }
+
+  img {
+    width: 3%;
+    margin-left: 14px;
+  }
+}
+
+:local(.menu) {
+  box-shadow: none !important;
+  border:none !important;
+  background: transparent !important;
+
+  li {
+    &:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
 @media (min-width: 120px) and (max-width: 580px) {
   :local(.row1) {
     flex-direction: column;
@@ -155,3 +186,31 @@ section {
     width: 100%;
   }
 }
+
+ @media only screen and (max-width: 768px) {
+   :local(.row1) {
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     padding: 20px;
+
+     article {
+       width: 80%;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+
+       p {
+         padding-left: 0;
+         width: auto;
+         font-size: 15px;
+       }
+     }
+   }
+
+   :local(.row2) {
+     flex-direction: column;
+   }
+ }
