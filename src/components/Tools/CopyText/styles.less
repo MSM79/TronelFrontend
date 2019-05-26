@@ -1,0 +1,23 @@
+
+:local(.container) {
+  position: relative;
+  cursor: pointer;
+}
+
+:local(.copied) {
+  position: absolute;
+  opacity: 0;
+  top: -21px;
+  right: -24px;
+  transition: opacity 0.3s;
+  background: #313035;
+  width: 85px;
+  text-align: center;
+  border-radius: 18px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+:local(.show) {
+  opacity: 1;
+}
