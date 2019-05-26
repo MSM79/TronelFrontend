@@ -14,6 +14,7 @@
     height: 67px;
     display: flex;
     align-items: center;
+    font-size: 16px;
 
     &:last-child {
       border-bottom: none;
@@ -30,7 +31,7 @@
   color: @gray-1;
 
   li {
-    width: 170px;
+    width: 136px;
   }
 }
 
@@ -40,7 +41,15 @@
 
   li {
     justify-content: flex-end;
+
+    img {
+      margin-left: 13px;
+    }
   }
+}
+
+:local(.currencyIcon) {
+  width: 10%;
 }
 
 :local(.desceription) {
@@ -99,5 +108,21 @@
 :local(.desceription) {
   width: 100%;
   font-size: 13px;
+  }
+}
+@media (max-width: 768px) and (min-width: 580px) {
+  :local(.form) {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    }
+
+    :local(.title) {
+      li {
+        width: 260px;
+    }
+  }
+:local(.desceription) {
+  width: 100%;
   }
 }

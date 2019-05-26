@@ -1,10 +1,12 @@
 import React from 'react';
 
 import deleteIcon from 'Root/images/icons-8-delete.png';
-import coinIcon from 'Root/images/binance-coin-logo-png-transparent-copy.png';
+import iconcopy from 'Root/images/icons-8-copy.png';
+
+import shorter from 'Root/helpers/shorter';
+import CopyText from 'Root/components/Tools/CopyText';
 
 import styles from './styles.less';
-
 
 function FormDelete(props) {
   const {
@@ -14,6 +16,7 @@ function FormDelete(props) {
     amountofbet,
     specifieddate,
     value,
+    src,
   } = props;
   return (
     <div className={styles.form}>
@@ -27,9 +30,15 @@ function FormDelete(props) {
           <li>Specified Date :</li>
         </ul>
         <ul className={styles.info}>
-          <li>{formnumber}</li>
-          <li>{requseter}</li>
-          <li><img src={coinIcon} alt="coin" /></li>
+        <li>
+          {shorter(formnumber)}
+          <CopyText text={formnumber} />
+        </li>
+        <li>
+          {shorter(requseter)}
+          <CopyText text={requseter} />
+        </li>
+          <li><img src={src} alt="coin" className={styles.currencyIcon} /></li>
           <li>{predictedprice}</li>
           <li>{amountofbet}</li>
           <li>{specifieddate}</li>

@@ -1,10 +1,12 @@
 import React from 'react';
 
 import acceptIcon from 'Root/images/icons-8-checked.png';
-import coinIcon from 'Root/images/binance-coin-logo-png-transparent-copy.png';
+import iconcopy from 'Root/images/icons-8-copy.png';
+
+import shorter from 'Root/helpers/shorter';
+import CopyText from 'Root/components/Tools/CopyText';
 
 import styles from './styles.less';
-
 
 function Form(props) {
   const {
@@ -14,6 +16,7 @@ function Form(props) {
     amountofbet,
     specifieddate,
     value,
+    src,
   } = props;
   return (
     <div className={styles.form}>
@@ -27,9 +30,13 @@ function Form(props) {
           <li>Specified Date :</li>
         </ul>
         <ul className={styles.info}>
-          <li>{formnumber}</li>
-          <li>{requseter}</li>
-          <li><img src={coinIcon} alt="coin" /></li>
+          <li>{shorter(formnumber)}
+            <CopyText text={formnumber} />
+          </li>
+          <li>{shorter(requseter)}
+            <CopyText text={requseter} />
+          </li>
+          <li><img src={src} alt="currency"  className={styles.currencyIcon} /></li>
           <li>{predictedprice}</li>
           <li>{amountofbet}</li>
           <li>{specifieddate}</li>
@@ -38,7 +45,7 @@ function Form(props) {
       <div className={styles.desceription}>
         <p>At the 2019/05/12|12:00 UTC  if the  BNB price is greater than or equal 30$, the requester user is the winner and gets 500 TRX, otherwise the acceptor user in the bet gets 500 TRX and  is the winner.</p>
       </div>
-      <button className={styles.acceptButton} type="button">
+      <button className={styles.acceptButton} type="button" onClick={props.handleDelete}>
         <img src={acceptIcon} alt="acceptIcon" />
         {value}
       </button>

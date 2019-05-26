@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 452px;
-  height: 586px;
+  height: 65%;
   border-radius: 5px;
   background: @charocal-gray;
   padding: 0px 15px;
@@ -14,6 +14,7 @@
     height: 67px;
     display: flex;
     align-items: center;
+    font-size: 16px;
 
     &:last-child {
       border-bottom: none;
@@ -30,7 +31,7 @@
   color: @gray-1;
 
   li {
-    width: 170px;
+    width: 136px;
   }
 }
 
@@ -40,6 +41,10 @@
 
   li {
     justify-content: flex-end;
+
+    img {
+      margin-left: 13px;
+    }
   }
 }
 
@@ -59,8 +64,12 @@
   border-radius: 4px;
   font-size: 16px;
   margin-top: 22px;
+  margin-bottom: 21px;
   background: @charocal-gray-1;
-  color: #80b541;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 :local(.win) {
@@ -70,6 +79,11 @@
 :local(.lose) {
   color:#c94850;
 }
+
+:local(.currencyIcon) {
+  width: 10%;
+}
+
 
 @media (min-width: 120px) and (max-width: 580px) {
 :local(.form) {
@@ -96,5 +110,21 @@
 :local(.desceription) {
   width: 100%;
   font-size: 13px;
+  }
+}
+@media (max-width: 768px) and (min-width: 580px) {
+  :local(.form) {
+    width: 100%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    }
+
+    :local(.title) {
+      li {
+        width: 260px;
+    }
+  }
+:local(.desceription) {
+  width: 100%;
   }
 }
