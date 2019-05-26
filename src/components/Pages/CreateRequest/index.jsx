@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Header from 'Root/components/Tools/Header';
 
 import Dropdown from 'Root/components/Tools/Dropdown';
 import RadioButton from 'Root/components/Tools/RadioButton';
-
+import DatePicker from 'antd/lib/date-picker'; // for js
+import { TimePicker } from 'antd';
+import 'antd/lib/date-picker/style/css'; // for css
+import moment from 'moment';
 import Menu, { Item as MenuItem, Divider } from 'rc-menu';
 import styles from './styles.less';
+
+import bitcoinIcon from 'Root/images/bitcoin.png';
+import ethereumIcon from 'Root/images/ethereum.png';
 
 function onSelect({ key }) {
   console.log(`${key} selected`);
@@ -14,13 +20,46 @@ function onSelect({ key }) {
 
 const menu = (
   <Menu onSelect={onSelect} className={styles.menu}>
-    <MenuItem key="1" className={styles.menuItem}>one</MenuItem>
+    <MenuItem key="1" className={styles.menuItem}>
+      Bitcoin
+      <img src={bitcoinIcon} alt="bitcoinIcon" />
+    </MenuItem>
     <Divider />
-    <MenuItem key="2" className={styles.menuItem}>two</MenuItem>
+    <MenuItem key="2" className={styles.menuItem}>
+      Ethereum
+      <img src={ethereumIcon} alt="ethereumIcon" />
+    </MenuItem>
   </Menu>
 );
 
-function CreateRequest() {
+class CreateRequest extends Component {
+  state = {
+    disabled1: true,
+    disabled2: true,
+  }
+
+  handle1 = () => {
+    this.setState({
+      disabled1: false,
+      disabled2: true,
+    });
+  }
+
+  handle2 = () => {
+    this.setState({
+      disabled1: true,
+      disabled2: false,
+    });
+  }
+
+  render() {
+    const { MonthPicker, RangePicker } = DatePicker;
+
+    const dateFormat = 'YYYY/MM/DD';
+    const monthFormat = 'YYYY/MM';
+    const format = 'HH:mm';
+
+    const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
   return (
     <div>
       <Header />
@@ -28,21 +67,30 @@ function CreateRequest() {
       <div className={styles.container}>
         <div>
           <p>Select a currency</p>
-          <Dropdown menu={menu} title="Ethereum" width="559" />
+          <Dropdown menu={menu} title="Bitcoin" width="559" />
         </div>
         <div className={styles.row}>
           <div>
-            <p>Greater and Equal</p>
-            <p>Lesser and Equal</p>
+            <div className={styles.cell}>
+              <RadioButton handleCheck={this.handle1} />
+              <p>Greater and Equal</p>
+            </div>
+            <div className={styles.cell}>
+              <RadioButton handleCheck={this.handle2} />
+              <p>Lesser and Equal</p>
+            </div>
           </div>
-          <div>
-            <input type="text" placeholder="Place holder" />
-            <input type="text" placeholder="Place holder" />
+          <div className={styles.inputrows}>
+            <input type="text" placeholder="Place holder" disabled={this.state.disabled1} />
+            <input type="text" placeholder="Place holder" disabled={this.state.disabled2} />
           </div>
         </div>
-        <div className={styles.rows}>
+        <div className={styles.datepicker}>
           <p>Specified date (UTC)</p>
-          <input type="text" placeholder="Place holder" />
+          <div>
+            <DatePicker defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} className={styles.time}/>
+            <TimePicker defaultValue={moment('12:08', format)} format={format}/>
+          </div>
         </div>
         <ul className={styles.rows}>
           <p>Expiration date:</p>
@@ -60,6 +108,7 @@ function CreateRequest() {
       </div>
     </div>
   );
+  }
 }
 
 export default CreateRequest;
