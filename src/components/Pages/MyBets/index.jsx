@@ -4,6 +4,9 @@ import Header from 'Root/components/Tools/Header';
 
 import FormBets from 'Root/components/Tools/FormBets';
 
+import bitcoinIcon from 'Root/images/bitcoin.png';
+import ethereumIcon from 'Root/images/ethereum.png';
+
 import styles from './styles.less';
 
 function MyBets() {
@@ -17,27 +20,31 @@ function MyBets() {
               <article className={styles.form}>
                 <p>Form number</p>
                 <div>
-                  <input type="text" placeholder="Enter ypur form number" />
+                  <input type="text" placeholder="Enter your form number" />
                   <input type="submit" value="Search" />
                 </div>
               </article>
             </div>
             <div className={styles.row2}>
               <FormBets
-                formnumber="276736719919836672"
+                formnumber="WTEA674fdDe714fd979de3EdF6A…"
+                acceptor="WTEA674fdDe714fd979de3EdF6A…"
                 requseter="WTEA674fdDe714fd979de3EdF6A…"
                 predictedprice="Greater than or equal $30"
                 amountofbet="500 TRX"
                 specifieddate="2019/05/12  |  12:00 UTC"
                 win
+                src={bitcoinIcon}
               />
               <FormBets
-                formnumber="276736719919836672"
+                formnumber="WTEA674fdDe714fd979de3EdF6A…"
+                acceptor="WTEA674fdDe714fd979de3EdF6A…"
                 requseter="WTEA674fdDe714fd979de3EdF6A…"
                 predictedprice="Greater than or equal $30"
                 amountofbet="500 TRX"
                 specifieddate="2019/05/12  |  12:00 UTC"
                 lose
+                src={ethereumIcon}
               />
             </div>
           </section>

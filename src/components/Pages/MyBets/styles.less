@@ -126,3 +126,31 @@ section {
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  :local(.row1) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+
+    article {
+      width: 80%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      p {
+        padding-left: 0;
+        width: auto;
+        font-size: 15px;
+      }
+    }
+  }
+
+  :local(.row2) {
+    flex-direction: column;
+  }
+}

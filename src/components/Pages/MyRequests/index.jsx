@@ -9,6 +9,9 @@ import Modals from 'Root/components/Pages/Modal';
 import Modal from 'Root/components/Tools/Modal';
 import Menu from 'Root/components/Tools/HamburgerMenu';
 
+import warningIcon from 'Root/images/warning.png';
+import bitcoinIcon from 'Root/images/bitcoin.png';
+import ethereumIcon from 'Root/images/ethereum.png';
 
 import styles from './styles.less';
 
@@ -57,6 +60,7 @@ class MyRequsets extends Component {
                 amountofbet="500 TRX"
                 specifieddate="2019/05/12  |  12:00 UTC"
                 value="Delete"
+                src={bitcoinIcon}
               />
               <FormDelete
               handleDelete={this.show}
@@ -66,12 +70,19 @@ class MyRequsets extends Component {
                 amountofbet="500 TRX"
                 specifieddate="2019/05/12  |  12:00 UTC"
                 value="Delete"
+                src={ethereumIcon}
               />
             </div>
           </section>
         </div>
-        <Modal width={479} height={225} visible={visible} onClose={this.hide}>
-          <Modals handleClose={this.hide} />
+        <Modal width={479} height={225} visible={visible} onClose={this.hide} theme="red" >
+          <Modals
+            text="Are you sure you want to delete this request?"
+            title="Delete Requset"
+            button="Delete"
+            handleClose={this.hide}
+            icon={warningIcon}
+           />
         </Modal>
         <Menu />
       </div>
