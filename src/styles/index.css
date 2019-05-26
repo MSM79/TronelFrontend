@@ -28,3 +28,11 @@ a {
 li {
   list-style: none;
 }
+
+p {
+  margin-bottom: 0;
+}
+
+input[type=text] {
+  font-size: 14px;
+}
