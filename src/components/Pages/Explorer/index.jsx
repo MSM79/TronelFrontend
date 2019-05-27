@@ -15,34 +15,25 @@ import styles from './styles.less';
 import bitcoinIcon from 'Root/images/bitcoin.png';
 import ethereumIcon from 'Root/images/ethereum.png';
 
-function onSelect({ key }) {
-  console.log(`${key} selected`);
-}
 
 const Range = createSliderWithTooltip(Slider.Range);
 
-const menu = (
-  <Menu onSelect={onSelect} className={styles.menu}>
-    <MenuItem key="1" className={styles.menuItem}>
-      Bitcoin
-      <img src={bitcoinIcon} alt="bitcoin" />
-    </MenuItem>
-    <Divider />
-    <MenuItem key="2" className={styles.menuItem}>
-      Ethereum
-      <img src={ethereumIcon} alt="ethereum" />
-    </MenuItem>
-  </Menu>
-);
+
 
 function range(e) {
   console.log(e);
 }
 
 class Explorer extends Component {
-
   state = {
     visible: false,
+     title: 'Bitcoin',
+  }
+
+  handleSelect = ({ key }) => {
+    this.setState({
+      title: key,
+    });
   }
 
   show = () => {
@@ -58,6 +49,18 @@ class Explorer extends Component {
   }
 
   render() {
+
+    const menu = (
+      <Menu onSelect={this.handleSelect} className={styles.menu}>
+        <MenuItem key="Bitcoin" className={styles.menuItem}>
+          Bitcoin
+        </MenuItem>
+        <Divider />
+        <MenuItem key="Ethereum" className={styles.menuItem}>
+          Ethereum
+        </MenuItem>
+      </Menu>
+    );
     const { visible } = this.state;
 
   return (
@@ -69,7 +72,7 @@ class Explorer extends Component {
           <div className={styles.row1}>
             <article className={styles.currency}>
               <p>Currency</p>
-              <Dropdown menu={menu} title="All" width="152" />
+              <Dropdown menu={menu} title={this.state.title} width="152" />
             </article>
             <article className={styles.amount}>
               <p>Amount of bet</p>

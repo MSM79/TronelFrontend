@@ -14,41 +14,44 @@ import styles from './styles.less';
 import bitcoinIcon from 'Root/images/bitcoin.png';
 import ethereumIcon from 'Root/images/ethereum.png';
 
-function onSelect({ key }) {
-  console.log(`${key} selected`);
-}
-
-const menu = (
-  <Menu onSelect={onSelect} className={styles.menu}>
-    <MenuItem key="1" className={styles.menuItem}>
-      Bitcoin
-      <img src={bitcoinIcon} alt="bitcoinIcon" />
-    </MenuItem>
-    <Divider />
-    <MenuItem key="2" className={styles.menuItem}>
-      Ethereum
-      <img src={ethereumIcon} alt="ethereumIcon" />
-    </MenuItem>
-  </Menu>
-);
-
 class CreateRequest extends Component {
-  constructor(props) {
-   super(props);
-   this.state = {
-     financialGoal: ''
+   state = {
+     amountValue: '',
+     disabled1: true,
+     disabled2: true,
+     greaterValue: '',
+     lowerValue: '',
+     title: 'Bitcoin',
    }
- }
 
- handleChange(evt) {
-    const financialGoal = (evt.target.validity.valid) ? evt.target.value : this.state.financialGoal;
-
-    this.setState({ financialGoal });
+  handleChange1 = (value) => {
+    if (/^\d+$/.test(value.target.value)) {
+      this.setState({
+        greaterValue: value.target.value,
+      });
+    }
   }
 
-  state = {
-    disabled1: true,
-    disabled2: true,
+  handleChange2 = (value) => {
+    if (/^\d+$/.test(value.target.value)) {
+      this.setState({
+        lowerValue: value.target.value,
+      });
+    }
+  }
+
+  handleChange3 = (value) => {
+    if (/^\d+$/.test(value.target.value)) {
+      this.setState({
+        amountValue: value.target.value,
+      });
+    }
+  }
+
+  handleSelect = ({ key }) => {
+    this.setState({
+      title: key,
+    });
   }
 
   handle1 = () => {
@@ -73,6 +76,19 @@ class CreateRequest extends Component {
     const format = 'HH:mm';
 
     const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY'];
+
+    const menu = (
+      <Menu onSelect={this.handleSelect} className={styles.menu}>
+        <MenuItem key="Bitcoin" className={styles.menuItem}>
+          Bitcoin
+        </MenuItem>
+        <Divider />
+        <MenuItem key="Ethereum" className={styles.menuItem}>
+          Ethereum
+        </MenuItem>
+      </Menu>
+    );
+
   return (
     <div>
       <Header />
@@ -80,7 +96,7 @@ class CreateRequest extends Component {
       <div className={styles.container}>
         <div>
           <p>Select a currency</p>
-          <Dropdown menu={menu} title="Bitcoin" width="559" />
+          <Dropdown menu={menu} title={this.state.title} width="559" />
         </div>
         <div className={styles.row}>
           <div>
@@ -94,8 +110,21 @@ class CreateRequest extends Component {
             </div>
           </div>
           <div className={styles.inputrows}>
-            <input type="text" placeholder="Place holder" disabled={this.state.disabled1} pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal}/>
-            <input type="text" placeholder="Place holder" disabled={this.state.disabled2} pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} />
+            <input
+              type="text"
+              pattern="[0-9]*"
+              onChange={this.handleChange1}
+              disabled={this.state.disabled1}
+              value={this.state.greaterValue}
+            />
+
+            <input
+              type="text"
+              pattern="[0-9]*"
+              onChange={this.handleChange2}
+              disabled={this.state.disabled2}
+              value={this.state.lowerValue}
+            />
           </div>
         </div>
         <div className={styles.datepicker}>
@@ -115,7 +144,12 @@ class CreateRequest extends Component {
 
         <div className={styles.rows}>
           <p>Amount bet (TRX)</p>
-          <input type="text" placeholder="Place holder" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} />
+          <input
+            type="text"
+            pattern="[0-9]*"
+            onChange={this.handleChange3}
+            value={this.state.amountValue}
+          />
         </div>
         <button type="button" className={styles.sendButton}>Send Request</button>
       </div>
