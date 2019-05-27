@@ -26,7 +26,7 @@ class CopyText extends Component {
         img: copyIcon,
         className: styles.copied,
       });
-    }, 1500);
+    }, 500);
   }
 
   render() {

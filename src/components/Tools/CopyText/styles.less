@@ -1,7 +1,11 @@
+@import "~Root/styles/colors.less";
 
 :local(.container) {
   position: relative;
-  cursor: pointer;
+
+  img {
+    cursor: pointer;
+  }
 }
 
 :local(.copied) {
@@ -10,12 +14,13 @@
   top: -21px;
   right: -24px;
   transition: opacity 0.3s;
-  background: #313035;
-  width: 85px;
+  background: @charocal-gray-1;
+  width: 60px;
   text-align: center;
-  border-radius: 18px;
-  font-size: 14px;
-  color: #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  color: @gray-1;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.36);
 }
 
 :local(.show) {
