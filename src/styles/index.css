@@ -45,3 +45,11 @@ input[type=text] {
 .rc-dropdown-menu > .rc-dropdown-menu-item-selected:after {
  display: none !important;
 }
+
+.rc-slider-tooltip-inner {
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: 0.3s;
+    font-size: 11px;
+    font-weight: 400;
+}
