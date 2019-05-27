@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
@@ -35,4 +36,12 @@ p {
 
 input[type=text] {
   font-size: 14px;
+}
+
+.rc-dropdown-menu-item-selected {
+  background: #343844 !important;
+}
+
+.rc-dropdown-menu > .rc-dropdown-menu-item-selected:after {
+ display: none !important;
 }
