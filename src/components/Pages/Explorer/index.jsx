@@ -23,9 +23,15 @@ const Range = createSliderWithTooltip(Slider.Range);
 
 const menu = (
   <Menu onSelect={onSelect} className={styles.menu}>
-    <MenuItem key="1" className={styles.menuItem}>Bitcoin</MenuItem>
+    <MenuItem key="1" className={styles.menuItem}>
+      Bitcoin
+      <img src={bitcoinIcon} alt="bitcoin" />
+    </MenuItem>
     <Divider />
-    <MenuItem key="2" className={styles.menuItem}>Ethereum</MenuItem>
+    <MenuItem key="2" className={styles.menuItem}>
+      Ethereum
+      <img src={ethereumIcon} alt="ethereum" />
+    </MenuItem>
   </Menu>
 );
 
@@ -68,7 +74,9 @@ class Explorer extends Component {
             <article className={styles.amount}>
               <p>Amount of bet</p>
                 <Range onChange={range}
-                  defaultValue={[20,50]}
+                  min= {0}
+                  max= {1000}
+                  defaultValue={[200,500]}
                   railStyle={{ background:'#b2b4b7'}}
                   className={styles.range}
                   tipFormatter={value => `${value} TRX`}
@@ -80,7 +88,7 @@ class Explorer extends Component {
             </article>
             <article className={styles.form}>
               <p>Form number</p>
-              <div>
+              <div className={styles.searchContainer}>
                 <input type="text" placeholder="Enter your form number" pattern="[A-Za-z]" />
                 <input type="submit" value="Search" />
               </div>
