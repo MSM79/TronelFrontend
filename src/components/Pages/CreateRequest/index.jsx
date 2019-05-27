@@ -33,6 +33,19 @@ const menu = (
 );
 
 class CreateRequest extends Component {
+  constructor(props) {
+   super(props);
+   this.state = {
+     financialGoal: ''
+   }
+ }
+
+ handleChange(evt) {
+    const financialGoal = (evt.target.validity.valid) ? evt.target.value : this.state.financialGoal;
+
+    this.setState({ financialGoal });
+  }
+
   state = {
     disabled1: true,
     disabled2: true,
@@ -81,8 +94,8 @@ class CreateRequest extends Component {
             </div>
           </div>
           <div className={styles.inputrows}>
-            <input type="text" placeholder="Place holder" disabled={this.state.disabled1} />
-            <input type="text" placeholder="Place holder" disabled={this.state.disabled2} />
+            <input type="text" placeholder="Place holder" disabled={this.state.disabled1} pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal}/>
+            <input type="text" placeholder="Place holder" disabled={this.state.disabled2} pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} />
           </div>
         </div>
         <div className={styles.datepicker}>
@@ -101,8 +114,8 @@ class CreateRequest extends Component {
         </ul>
 
         <div className={styles.rows}>
-          <p>Amount bet</p>
-          <input type="text" placeholder="Place holder" />
+          <p>Amount bet (TRX)</p>
+          <input type="text" placeholder="Place holder" pattern="[0-9]*" onInput={this.handleChange.bind(this)} value={this.state.financialGoal} />
         </div>
         <button type="button" className={styles.sendButton}>Send Request</button>
       </div>

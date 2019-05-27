@@ -45,7 +45,7 @@ class MyRequsets extends Component {
               <article className={styles.form}>
                 <p>Form number</p>
                 <div>
-                  <input type="text" placeholder="Enter ypur form number" />
+                  <input type="text" placeholder="Enter your form number" />
                   <input type="submit" value="Search" />
                 </div>
               </article>
@@ -63,7 +63,8 @@ class MyRequsets extends Component {
                 src={bitcoinIcon}
               />
               <FormDelete
-              handleDelete={this.show}
+                handleDelete={this.show}
+                handleClose={this.hide}
                 formnumber="276736719919836672"
                 requseter="WTEA674fdDe714fd979de3EdF6A…"
                 predictedprice="Greater than or equal $30"
