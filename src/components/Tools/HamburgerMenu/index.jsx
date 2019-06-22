@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import CheeseburgerMenu from 'cheeseburger-menu';
 import HamburgerMenu from 'react-hamburger-menu'
 
-import logoIcon from 'Root/images/logo.png';
+import assetIcon from 'Root/images/asset-6-4-x@2x.png';
 import iconcopy from 'Root/images/icons-8-copy.png';
 import trx from 'Root/images/image-2019-04-20-01-21-26.png';
 import exitIcon from 'Root/images/icons8-delete.svg';
