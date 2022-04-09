@@ -45,7 +45,7 @@
     "connected-react-router": "^4.4.1",
     "history": "^4.7.2",
     "indicative": "^5.0.6",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "prop-types": "^15.6.2",
     "rc-dropdown": "^2.4.1",
     "rc-menu": "^7.4.22",
